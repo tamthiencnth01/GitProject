@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tạo Form Survey Khách Hàng</title>
+        <style>
+            body {
+            line-height: 0.25;
+        }
+        .wufoo {
+                font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+            }
+            p {
+                font-size: small;
+            }
+        
+        table {
+            width:100;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        tr:nth-child(odd) {
+            background-color: #eee;
+        }
+        tr:nth-child(even) {
+           background-color:#fff;
+        }
+        th {
+            background-color: black;
+            color: white;
+        }
+        </style>
+    </head>
+    <body>
+        <form method="get" action="taoformsurveykhachhang.html" class = "wufoo">    
+            <h3>Market Research Survey</h3>
+            <p>Please take a few moments to complete this satisfaction survey.</p>
+            <hr>
+            <h4>What is your age range?</h4>
+        <select style="width:500px;">
+         <option value = "  ">18-24</option>
+         <option>25-34</option>
+         <option>35-50</option>
+         <option>50+</option>
+        </select>
+
+        <h4>What is your yearly income range?</h4>
+        <select style="width:500px;">
+            <option value = "  ">$0-$25000</option>
+            <option>$25001-$50000</option>
+            <option>@50001-$100000</option>
+            <option>$100000+</option>
+        </select>
+        
+        <h4>Gender Identity</h4>
+        <input type="radio" name="Gender"/> Male <br/>
+        <input type="radio" name="Gender"/> Female <br/>
+        <input type="radio" name="Gender"/> Nonbinary <br/>
+        <input type="radio" name="Gender"/> Other<br>
+        <textarea rows="1"></textarea>
+
+        <h4>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h4>
+        <input type="checkbox" name="products"/> Product 1 <br/>
+        <input type="checkbox" name="products"/> Product 2 <br/>
+        <input type="checkbox" name="products"/> Product 3 <br/>
+        
+        <h4>How often would you use our new product?</h4>
+        <input type="radio" name="datetime"/> Daily <br/>
+        <input type="radio" name="datetime"/> Weekly <br/>
+        <input type="radio" name="datetime"/> Monthly <br/>
+        
+        <h4>What would you pay for the new product?</h4>
+        $<input type="text" size="8">.<input type="text" size="1px">
+
+        <h4>What features would you like to see in the new product</h4>
+        <textarea rows="5" cols="100"></textarea><br>
+
+        <h4>Please rate your level of agreement with the following statements</h4>
+        <table>
+            <tr aria-colspan="2">
+              <td></td>
+              <td>Strongly Disagree</td>
+              <td>Disagree</td>
+              <td>Agree</td>
+              <td>Strong Agree</td>
+            </tr>
+            <tr>
+              <td>Our products are priced fairly.</td>
+              <td><input type="radio" name="fairly"/>1</td>
+              <td><input type="radio" name="fairly"/>2</td>
+              <td><input type="radio" name="fairly"/>3</td>
+              <td><input type="radio" name="fairly"/>4</td>
+            </tr>
+            <tr>
+                <td>Our products are high quality</td>
+                <td><input type="radio" name="fairly"/>1</td>
+                <td><input type="radio" name="fairly"/>2</td>
+                <td><input type="radio" name="fairly"/>3</td>
+                <td><input type="radio" name="fairly"/>4</td>
+              </tr>
+              <tr>
+                <td>You would recommend our product to friend or coworker</td>
+                <td><input type="radio" name="fairly"/>1</td>
+                <td><input type="radio" name="fairly"/>2</td>
+                <td><input type="radio" name="fairly"/>3</td>
+                <td><input type="radio" name="fairly"/>4</td>
+              </tr>
+          </table>
+    
+        <p><input type = "button" name="btSubmit" value="Submit"/></p>
+    </form>
+    </body>
+</html>
