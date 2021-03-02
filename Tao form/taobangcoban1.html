@@ -20,7 +20,7 @@
             th
             {
                 border: solid black;
-                background-color: yellow;
+                
                 border-collapse: collapse;
                 padding: 10px;
             }
@@ -66,19 +66,21 @@
         </div>
         </center>
         <table>
-            
+            <thead>
             <tr>
                 <td colspan="3"></td>
-                <th>Thứ 3</th>
-                <th>Thứ 5</th>
-                <th>Thứ 7</th>
+                <th style="background-color: yellow;">Thứ 3</th>
+                <th style="background-color: yellow;">Thứ 5</th>
+                <th style="background-color: yellow;">Thứ 7</th>
             </tr>
-            <tr>
+            <tr style="background-color: tomato;">
                 <th>Tuần</th>
                 <th>Ngày bắt đầu</th>
                 <th>Ngày kết thúc</th>
                 <th colspan="3">Môn học</th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>01</td>
                 <td>01/09/2009</td>
@@ -103,6 +105,7 @@
                 <td>..</td>
                 <td>..</td>
             </tr>
+            </tbody>
         </table>
     </body>
 </html>
