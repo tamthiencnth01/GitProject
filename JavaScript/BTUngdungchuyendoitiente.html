@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+    
+        Amount
+        <input type="number" id="amount">
+        From Currency
+        <select id="from" name="fromcurrency">
+            <option value="VietNam">VietNam</option>
+            <option value="USD">American</option>
+        </select>
+        To Currency
+        <select id="to" name="tocurrency">
+            <option value="USD">USD</option>
+            <option value="VietNam">VND</option>
+        </select>
+        <button onclick="CONVERT()">CONVERT</button>
+    
+    <script>
+      function CONVERT(){
+        //    var result = parseFloat(document.getElementById('amount').value);
+        //     var a = document.getElementById('from').value;
+        //     var b = document.getElementById('to').value;
+        //     console.log(result);
+        //   if (a == 'viet' && b == 'usd'){
+        //       document.write('Kết quả là:'result/25000)
+        //   }else if (a == 'viet' && b == 'vnd')
+        //   {
+        //       document.write('Kết quả là:'result)
+        //   }
+        //    document.write('Result:'+ result)   
+            var a = document.getElementById('to').value;
+            var b = document.getElementById('from').value;
+            var c = parseFloat(document.getElementById('amount').value);
+            console.log(c);
+            if (a == 'VietNam' && b == 'USD') {
+                document.write('Result = ' + c * 25000 + ' VND');
+            } else if (a == 'VietNam' && b == 'VietNam') {
+                document.write('Result = ' + c + ' VND');
+            } else if (a == 'USD' && b == 'USD') {
+                document.write('Result = ' + c + ' USD');
+            } else document.write('Result = ' + c / 25000 + ' USD');
+        }
+    
+    </script>
+</body>
+</html>
