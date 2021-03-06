@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ứng dụng máy tính</title>
+  </head>
+  <body>
+    Nhập vào giá trị đầu tiên:<input type="number" id="one" /><br />
+    Nhập vào giá trị thứ hai:<input type="number" id="two" /><br />
+
+    <button onclick="Addition()">Addition(+)</button>
+    <button onclick="Subtraction()">Subtraction(-)</button>
+    <button onclick="Multilication()">Multilication(*)</button>
+    <button onclick="Division()">Division(/)</button>
+    <script>
+      function Addition() {
+        var a = parseFloat(document.getElementById("one").value);
+        var b = parseFloat(document.getElementById("two").value);
+        console.log(a);
+        console.log(b);
+        var Add = a + b;
+        document.write("Result = " + Add);
+      }
+      function Subtraction() {
+        var a = parseFloat(document.getElementById("one").value);
+        var b = parseFloat(document.getElementById("two").value);
+        console.log(a);
+        console.log(b);
+        var Sub = a - b;
+        document.write("Result = " + Sub);
+      }
+      function Multilication() {
+        var a = parseFloat(document.getElementById("one").value);
+        var b = parseFloat(document.getElementById("two").value);
+        console.log(a);
+        console.log(b);
+        var Multi = a * b;
+        document.write("Result = " + Multi);
+      }
+      function Division() {
+        var a = parseFloat(document.getElementById("one").value);
+        var b = parseFloat(document.getElementById("two").value);
+        console.log(a);
+        console.log(b);
+        var Div = a / b;
+        document.write("Result = " + Div);
+      }
+    </script>
+  </body>
+</html>
