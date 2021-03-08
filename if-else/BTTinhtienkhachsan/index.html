@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính tiền khách sạn</title>
+  </head>
+  <body>
+    <p>Check In</p>
+    <input type="date" id="check-in" />
+    <p>Check Out</p>
+    <input type="date" id="check-out" />
+    <p>Loai phong</p>
+    <select id="price">
+      <option value="500000">A</option>
+      <option value="450000">B</option>
+      <option value="350000">C</option>
+    </select>
+    <button id="submit" onclick="process()">Thanh toán</button>
+    <div id="result"></div>
+    <script>
+      const checkIn = document.getElementById("check-in");
+      const checkOut = document.getElementById("check-out");
+      const priceDOM = document.getElementById("price");
+      const resultDOM = document.getElementById("result");
+      function process() {
+        const checkInDate = new Date(checkIn.value);
+        const checkOutDate = new Date(checkOut.value);
+        console.log(checkInDate);
+        console.log(checkOutDate);
+        const diffTime = Math.abs(checkOutDate - checkInDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        const price = Number(priceDOM.value);
+        console.log(price);
+        const spareDate = diffDays % 7;
+        const weeks = diffDays - spareDate;
+        const total = spareDate * price + weeks * price * 0.9;
+        console.log(total);
+        resultDOM.innerText = total + " VND";
+      }
+    </script>
+  </body>
+</html>
