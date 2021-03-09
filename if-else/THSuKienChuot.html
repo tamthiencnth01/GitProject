@@ -7,23 +7,77 @@
     <title>Document</title>
   </head>
   <body>
-    <form>
-      <img id="myImage" src="1.jpg" style="width: 150px" />
-      <p>Click button below to move the image to right</p>
-      <input type="button" value="Click Me" onclick="moveRight();" />
-    </form>
-    <script>
-      let imgObj = null;
-      imgObj = document.getElementById("myImage");
-      function init() {
-        imgObj = document.getElementById("myImage");
-        imgObj.style.position = "relative";
-        imgObj.style.left = "0px";
-      }
-      function moveRight() {
-        imgObj.style.left = parseInt(imgObj.style.left) + 10 + "px";
-      }
-      window.onload = init;
-    </script>
+    <body onload="docReady()">
+      <img
+        id="myImage"
+        src="1.jpg"
+        style="position: absolute; left: 0; top: 0"
+      />
+      <p>Click button below to move the image to position</p>
+      <input type="button" value="Right" onclick="moveRight();" />
+      <input type="button" value="Left" onclick="moveLeft();" />
+      <input type="button" value="Up" onclick="moveUp();" />
+      <input type="button" value="Down" onclick="moveDown();" />
+      <script>
+        // let imgObj = null;
+        // imgObj = document.getElementById("myImage");
+        // function init() {
+        //   imgObj = document.getElementById("myImage");
+        //   imgObj.style.position = "absolute";
+        //   // imgObj.style.left = "0px";
+        //   // imgObj.style.top = "0px";
+        // }
+        // function moveRight() {
+        //   imgObj.style.left = parseInt(imgObj.style.left) + 10 + "px";
+        // }
+        // function moveLeft() {
+        //   imgObj.style.left = parseInt(imgObj.style.left) - 10 + "px";
+        // }
+        // function moveUp() {
+        //   imgObj.style.top = parseInt(imgObj.style.top) - 10 + "px";
+        // }
+        // function moveDown() {
+        //   imgObj.style.top = parseInt(imgObj.style.top) + 10 + "px";
+        // }
+        // window.onload = init;
+
+        //sự kiện bàn phím
+        function upArrowPressed() {
+          let element = document.getElementById("myImage");
+          element.style.top = parseInt(element.style.top) - 5 + "px";
+        }
+        function downArrowPressed() {
+          var element = document.getElementById("myImage");
+          element.style.top = parseInt(element.style.top) + 5 + "px";
+        }
+        function leftArrowPressed() {
+          var element = document.getElementById("myImage");
+          element.style.left = parseInt(element.style.left) - 5 + "px";
+        }
+        function rightArrowPressed() {
+          var element = document.getElementById("myImage");
+          element.style.left = parseInt(element.style.left) + 5 + "px";
+        }
+        function moveSelection(evt) {
+          switch (evt.keyCode) {
+            case 37:
+              leftArrowPressed();
+              break;
+            case 39:
+              rightArrowPressed();
+              break;
+            case 38:
+              upArrowPressed();
+              break;
+            case 40:
+              downArrowPressed();
+              break;
+          }
+        }
+        function docReady() {
+          window.addEventListener("keydown", moveSelection);
+        }
+      </script>
+    </body>
   </body>
 </html>

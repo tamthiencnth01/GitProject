@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>HocTuDau.com BMI Tool</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<style>
+#hoctudau {
+width: 600px;
+margin: 50px auto;
+}
+#convert_hw_to_bmi {
+float: left;
+}
+#convert_bmi_to_hw {
+margin-top: 15px;
+float: right;
+}
+#result {
+border: 1px solid red;
+margin-top: 15px;
+padding: 15px;
+}
+#BMI_table {
+margin: 0 auto;
+}
+#BMI_table td, #BMI_table th{
+padding: 3px;
+border: 1px solid gray;
+border-top-style: dotted;
+border-bottom-style: dotted;
+}
+</style>
+</head>
+<body>
+<div id="hoctudau">
+<form>
+<fieldset>
+<legend>Your Height (H) & Weight (W)</legend>
+<label for="human_height">H (cm): </label><input id="human_height" />
+<label for="human_weight">W (kg): </label><input id="human_weight" />
+</fieldset>
+<fieldset>
+<legend>Convert Now</legend>
+<input type="button" onclick="convert(this.id);" id="convert_hw_to_bmi" value="Nhập chiều cao, cân nặng (ở trên) rồi bấm vào đây để tính BMI" />
+<input type="button" onclick="convert(this.id);" id="convert_bmi_to_hw" value="Nhập BMI (ở dưới) rối bấm vào đây để tìm H, W" />
+</fieldset>
+<fieldset>
+<legend>Your BMI</legend>
+<label for="h_bmi">Your BMI: </label><input id="h_bmi" />
+</fieldset>
+<div id='result'></div>
+<p>
+Theo khuyến nghị của tổ chức Y tế thế giới (WHO), trừ người có thai, nếu BMI:
+</p>
+<ul>
+<li>Dưới 18.5 là thiếu cân, thiếu năng lượng trường diễn</li>
+<li>Từ 18.5 đến 24.99 là bình thường</li>
+<li>Từ 25 đến 29.99 là thừa cân</li>
+<li>&gt;= 30 là béo phì</li>
+</ul>
+<blockquote>
+Tuy nhiên: Chỉ số BMI sẽ không chính xác nếu bạn là vận động viên hoặc người tập thể hình (bởi các múi cơ luôn nặng hơn mỡ) và khi đó, chỉ số BMI của bạn sẽ nằm trong mức béo, rất béo)
+</blockquote>
+
+<table id="BMI_table" cellspacing="0" summary="Bảng đánh giá theo chuẩn của Tổ chức Y tế thế giới(WHO) và dành riêng cho người châu Á ( IDI&amp;WPRO)">
+<thead>
+<tr>
+<th>Phân loại</th>
+<th>Chuẩn chung</th>
+<th>Chuẩn Châu Á</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cân nặng thấp (gầy)</td>
+<td>&lt;18.5</td>
+<td>&lt;18.5</td>
+</tr>
+<tr>
+
+<td>Bình thường</td>
+<td>18.5 - 24.9</td>
+<td>18.5 - 22.9</td>
+</tr>
+<tr>
+<td>Thừa cân</td>
+<td>25</td>
+
+<td>23</td>
+</tr>
+<tr>
+<td>Tiền béo phì</td>
+<td>25 - 29.9</td>
+<td>23 - 24.9</td>
+</tr>
+
+<tr>
+<td>Béo phì độ I</td>
+<td>30 - 34.9</td>
+<td>25 - 29.9</td>
+</tr>
+<tr>
+<td>Béo phì độ II</td>
+
+<td>35 - 39.9</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Béo phì độ III</td>
+<td>40</td>
+<td>40
+</tr>
+</tbody>
+</table>
+</div>
+
+<script>
+//version 1-4: http://jsbin.com/awoze/edit
+
+function convert(t) {
+if (t == 'convert_hw_to_bmi') {
+p_h = +document.getElementById('human_height').value;
+p_w = +document.getElementById('human_weight').value;
+your_bmi = +bmi[p_h][p_w];
+if (your_bmi < 18.5) info = 'cân nặng thấp hoặc gầy';
+else if (your_bmi < 23) info = 'bình thường';
+else if (your_bmi == 23) info = 'thừa cân (nhưng chưa béo phì)';
+else if (your_bmi < 25) info = 'ở giai đoạn tiền béo phì';
+else if (your_bmi < 30) info = 'bị béo phì độ I';
+else if (your_bmi == 30) info = 'bị béo phì độ II';
+else info = 'bị béo phì độ III';
+your_info = '<div>';
+your_info += '<h3>Bạn ' + info + '</h3>';
+your_info += '</div>';
+document.getElementById('h_bmi').value = your_bmi;
+document.getElementById('result').innerHTML = your_info;
+}
+if (t == 'convert_bmi_to_hw') {
+p_bmi = +document.getElementById('h_bmi').value;
+var the_table = '<table border=1>';
+for (i=min_h; i<max_h; i++) {
+for (j=min_w; j<max_w; j++) {
+if (bmi[i][j] == p_bmi) {
+the_table += '<tr><td>' + 'h=' + i + '</td><td> w=' + j + '</td><td> bmi=' + bmi[i][j] + '</td></tr>';
+}
+}
+the_table += '</tr>';
+}
+the_table += '</table>';
+document.getElementById('result').innerHTML = the_table;
+}
+}
+var bmi = new Array();
+var min_h = 50;
+var max_h = 200;
+var min_w = 30;
+var max_w = 200;
+window.onload = function() {
+for (i=min_h; i<max_h; i++) {
+bmi[i] = new Array();
+for (j=min_w; j<max_w; j++) {
+the_bmi = Math.round(1000000*j/(i*i))/100;
+bmi[i][j] = the_bmi;
+}
+}
+
+
+}
+</script>
+</body>
+</html>
