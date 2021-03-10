@@ -8,9 +8,15 @@
   </head>
   <body>
     <script>
-      for (var index = 1; index >= 10; index++) {
-        console.log(index);
+      for (var index = 0; index <= 5; index++) {
+        document.write("The number is " + index + "<br>");
       }
+      let inputn = prompt("Nhập n:");
+      let total = 0;
+      for (let i = 0; i <= inputn; i++) {
+        total = total + i;
+      }
+      alert(total);
     </script>
   </body>
 </html>
