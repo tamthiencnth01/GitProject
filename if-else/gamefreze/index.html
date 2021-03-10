@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fre</title>
+  </head>
+  <body>
+    <img
+      id="img1"
+      src="images/dom1.png"
+      alt=""
+      style="box-shadow: black 2px 3px 3px"
+    /><br />
+    <img
+      id="img2"
+      src="images/jason2.png"
+      alt=""
+      style="box-shadow: black 2px 3px 3px"
+    />
+    <script>
+      let count = 1;
+      $("#img1").click(changeimg1 () {
+        count++;
+      // });
+      // changeimg1(){
+      //   document.getElementById('img1').
+      // }
+      // document.getElementById("img1").onclick =
+        function changeimg1 () {
+        document.getElementById("img1").src = "images/jason1.png";
+      };
+      if count % 3 ==0
+      document.getElementById("img1").src = "images/rock1.png";
+    </script>
+  </body>
+</html>
