@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhập 2 số AB</title>
+  </head>
+  <body>
+    Nhập vào A:<input type="number" id="inputa" /><br />
+    Nhập vào B:<input type="number" id="inputb" />
+    <input type="button" value="Check number" onclick="Check()" />
+    <script>
+      function Check() {
+        let a = +document.getElementById("inputa").value;
+        let b = +document.getElementById("inputb").value;
+
+        // let a = parseInt(prompt("Nhập số A:"));
+        // let b = parseInt(prompt("Nhập số B:"));
+        if (a % b == 0) {
+          document.write("A chia hết cho B");
+        } else {
+          document.write("A không chia hết cho B");
+        }
+      }
+    </script>
+  </body>
+</html>

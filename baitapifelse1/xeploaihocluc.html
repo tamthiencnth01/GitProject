@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xếp hạng học lực</title>
+  </head>
+  <body>
+    <script>
+      let diemkiemtra = parseFloat(prompt("Nhập điểm kiểm tra:"));
+      let diemthi = parseFloat(prompt("Nhập điểm thi"));
+      let diemthicuoiky = parseFloat(prompt("Nhập điểm thi cuối kỳ"));
+      let diemtrungbinh = (diemkiemtra + diemthi * 2 + diemthicuoiky * 3) / 6;
+      if (diemtrungbinh >= 8.5) {
+        alert("Bạn là học sinh Xuất Sắc");
+      } else {
+        if (diemtrungbinh >= 7) {
+          alert("Bạn là học sinh Khá");
+        } else {
+          if (diemtrungbinh >= 5) {
+            alert("Bạn là học sinh Trung Bình");
+          } else {
+            alert("Bạn là học sinh Yếu");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
