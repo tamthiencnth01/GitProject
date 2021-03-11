@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let data = +prompt("Nhập vào một số:");
+      console.log(data);
+      while (isNaN(data) || data <= 0 || data != parseInt(data)) {
+        alert("Vui lòng nhập vào số nguyên dương!");
+        data = prompt("Nhập vào một số:");
+      }
+      alert("Số nguyên dương là: " + data);
+    </script>
+  </body>
+</html>
