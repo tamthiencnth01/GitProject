@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arrayMax = [1, 2, 3, 4, 5, 6, 9, 10, 11, 12];
+      var max = arrayMax[0];
+      var sum = 0;
+      for (var i = 1; i < arrayMax.length; i++) {
+        if (arrayMax[i] > arrayMax[i - 1]) {
+          max = arrayMax[i];
+        }
+        sum += arrayMax[i];
+        var average = sum / arrayMax.length;
+      }
+      console.log(max);
+      // return i;
+      console.log(average);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var score = [40, 100, 1, 6, 35, 10];
+      var point = prompt("Nhap gia tri:");
+      let array = point.split(" ");
+      //console.log(array);
+      array.sort(function (a, b) {
+        return b - a;
+      });
+      console.log(array);
+    </script>
+  </body>
+</html>

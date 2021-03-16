@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var array = [-5, 8, -2, 8, 9, 10, -7];
+      var count = 0;
+      for (const el in array) {
+        if (array[el] < 0) {
+          console.log(array[el]);
+          count++;
+        }
+      }
+      console.log(count);
+    </script>
+  </body>
+</html>

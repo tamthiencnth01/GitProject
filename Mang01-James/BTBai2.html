@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <input type="text" id="tieng_anh" />
+    <input type="button" value="Dịch" onclick="translate()" />
+    <p id="vietnam"></p>
+    <script>
+      let eng = document.getElementById("tieng_anh").value;
+      console.log(eng);
+      let arrayEng = ["how", "who", "what", "which", "when"];
+      let arrayVie = ["Thế nào", "Là ai", "Cái gì", "Khi nào", "Lúc nào"];
+      document.write("Chỉ dịch được:" + arrayEng.join(", "));
+      console.log(arrayVie); -->
+    <!-- //   let count = 0;
+      //   function translate() {
+      //     for (let i = 0; i < arrayEng.length; i++)
+      //       if (arrayEng[i] == english.value) {
+      //         count = 0;
+      //         document.getElementById("vietnam").innerHTML = arrayVie[i];
+      //         break;
+      //       } else {
+      //         count++;
+      //       }
+      //     if (count != 0) {
+      //       alert("Mời bạn nhập các từ đã được dịch:");
+      //     }
+      //   } -->
+    <input type="text" id="tieng_anh" />
+
+    <input type="button" value="Dịch" onclick="dich()" />
+    <br /><br />
+    <p id="tieng_viet" />
+    <script>
+      let tieng_anh = document.getElementById("tieng_anh");
+      console.log(tieng_anh.value);
+      let mangTA = ["how", "old", "are", "you", "i", "am", "fine", "thanks"];
+      let mangTV = [
+        "làm sao",
+        "cũ, cổ xưa",
+        "là",
+        "bạn",
+        "tôi",
+        "là",
+        "khỏe",
+        "cảm ơn",
+      ];
+      document.write("Chỉ có thể dịch được các từ [" + mangTA.join(" ") + "]");
+      let dem = 0;
+      function dich() {
+        for (let i = 0; i < mangTA.length; i++) {
+          if (mangTA[i] == tieng_anh.value) {
+            dem = 0;
+            document.getElementById("tieng_viet").innerHTML = mangTV[i];
+            break;
+          } else {
+            dem++;
+          }
+        }
+        if (dem != 0) {
+          alert("Không có dữ liệu");
+        }
+      }
+    </script>
+  </body>
+</html>
