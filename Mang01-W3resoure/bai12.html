@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sumOfArray(array1) {
+        var sum = 0;
+        i = array1.length;
+        while (i--) {
+          sum += array1[i];
+        }
+        return sum;
+      }
+      console.log(sumOfArray([1, 2, 3, 4, 5]));
+      function productOfArray(array2) {
+        var product = 1;
+        i = array2.length;
+        while (i--) {
+          product *= array2[i];
+        }
+        return product;
+      }
+      console.log(productOfArray([1, 2, 3, 4, 5]));
+    </script>
+  </body>
+</html>

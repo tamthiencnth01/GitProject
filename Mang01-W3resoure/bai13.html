@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="text1" /></input><input
+      onclick="addArray()"
+      type="button"
+      id="button1"
+      value="Add"
+    /></input><input
+      onclick="displayarray()"
+      type="button"
+      id="button2"
+      value="Display"
+    /></input>
+    <div id="Result"></div>
+    <script>
+      var x = 0;
+      var array = Array();
+      function addArray() {
+        array[x] = document.getElementById("text1").value;
+        alert("So" + x + "Co gia tri la:" + array[x]);
+        x++;
+        document.getElementById("text1").value = "";
+      }
+      function displayarray() {
+        var b = "<hr/>";
+        for (let y = 0; y < array.length; y++) {
+          b += "So" + y + "=" + array[y] + "<br/>";
+        }
+        document.getElementById("Result").innerHTML = b;
+      }
+
+    </script>
+  </body>
+</html>

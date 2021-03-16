@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sumArray(array1, array2) {
+        var result = [];
+        var control = 0;
+        var x = 0;
+        if (array1.length === 0) {
+          return "array1 is emty";
+        }
+        if (array2.length === 0) {
+          return "array2 is emty";
+        }
+        while (control < array1.length && control < array2.length) {
+          result.push(array1[control] + array2[control]);
+          control++;
+        }
+        if (control === array1.length) {
+          for (x = control; x < array2.length; x++) {
+            result.push(array2[x]);
+          }
+        } else {
+          for (let x = control; x < array2.length; x++) {
+            result.push(array1[x]);
+          }
+        }
+        return result;
+      }
+      console.log(sumArray([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]));
+    </script>
+  </body>
+</html>

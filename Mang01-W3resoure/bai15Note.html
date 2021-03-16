@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var color = [
+        "Blue ",
+        "Green",
+        "Red",
+        "Orange",
+        "Violet",
+        "Indigo",
+        "Yellow ",
+      ];
+
+      function Ordinal(n) {
+        var o = ["st", "nd", "rd", "th"],
+          x = n % 100;
+        return x + (o[(x - 20) % 10] || o[x] || o[0]);
+      }
+
+      for (n = 0; n < color.length; n++) {
+        var ordinal = n + 1;
+
+        var output = Ordinal(ordinal) + " choice is " + color[n] + ".";
+
+        console.log(output);
+      }
+    </script>
+  </body>
+</html>
