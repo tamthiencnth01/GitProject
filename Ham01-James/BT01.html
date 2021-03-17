@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(number) {
+        var flag = true;
+        //Neu nho hon 2 thi ko la so nguyen to
+        if (number < 2) {
+          flag = false;
+        } else if (number == 2) {
+          flag == true;
+        } else if (number % 2 == 0) {
+          flag = false;
+        } else {
+          //tao vong lap tu 3 toi can bac hai of n
+          for (let i = 3; i < Math.sqrt(number); i += 2) {
+            if (number % i == 0) {
+              flag = false;
+              break;
+            }
+          }
+        }
+        if (flag == true) {
+          document.write(number + "la so nguyen to</br>");
+        } else {
+          document.write(number + "ko phai la so nguyen to <br>");
+        }
+      }
+      let check = isPrime(9);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function doFactorial(number) {
+        let result = 1;
+        for (let i = number - 1; i > 0; i--) {
+          result = number * result;
+        }
+        return result;
+      }
+      let check = doFactorial(3);
+      console.log(check);
+    </script>
+  </body>
+</html>
