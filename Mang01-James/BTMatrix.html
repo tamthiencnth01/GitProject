@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tbody></tbody>
+    </table>
+    <script>
+      function generatorMatrix(size, min, max) {
+        let matrix = [];
+        for (let i = 0; i < size; i++) {
+          let array = [];
+          for (let j = 0; j < size; j++) {
+            array[j] = Math.floor(Math.random() * (max - min + 1) + min);
+          }
+          matrix.push(array);
+        }
+        return matrix;
+      }
+      function isEven(number) {
+        return number % 2 == 0;
+      }
+      function totalEvenInMatrix(matrix) {
+        let total = 0;
+        for (let i = 0; i < matrix.length; i++) {
+          for (let j = 0; j < matrix[i].length; j++) {
+            if (isEven(matrix[i][j])) {
+              total += matrix[i][j];
+            }
+          }
+        }
+        return total;
+      }
+      function totalNumber(matrix) {
+        let total = 0;
+        for (let i = 0; i < matrix.length; i++) {
+          total += matrix[i][j];
+        }
+        return total;
+      }
+      function totalMainCross(matrix) {
+        let total = 0;
+        for (let i = 0; i < matrix.length; i++) {
+          total += matrix[i][i];
+        }
+        return total;
+      }
+      function totalSecondCross(matrix) {
+        let total = 0;
+        for (let i = matrix.length - 1; i >= 0; i--) {
+          total += matrix[i][matrix.length - i - 1];
+        }
+        return total;
+      }
+      function totalBorderLine(matrix) {
+        let total = 0;
+        for (let i = 0; i < matrix.length; i++) {
+          for (let j = 0; j < matrix[i].length; j++) {
+            if (
+              i == 0 ||
+              i == matrix.length - 1 ||
+              j == 0 ||
+              j == matrix.length - 1
+            )
+              total += matrix[i][j];
+          }
+        }
+        return total;
+      }
+      function generateTable(matrix) {
+        let table_str = "";
+        for (let i = 0; i < matrix.length; i++) {
+          table_str += "<tr>";
+          for (let j = 0; j < matrix[i].length; j++) {
+            table_str += "<td>" + matrix[i][j] + "</td>";
+          }
+          table_str += "</tr>";
+        }
+        let tbody = document.getElementsByTagName("tbody")[0];
+        tbody.innerHTML = table_str;
+      }
+      function trianglesAbove(matrix){
+        let table_str = "";
+        for(let i =0;i<matrix.length;i++){
+            table_str += "<tr>";
+                for(let j=0;j<matrix.length;j++){
+                    if(i==j){
+                        for(let a=i+1;a<matrix.length;a++){
+                            table_str += "<td>" + matrix[a][j] = ("0"); + "</td>";
+
+                        }
+                    }
+                }
+      }
+      function main() {
+        let size = +prompt("Nhap size van ban:");
+        let min = +prompt("Nhap so nho nhat:");
+        let max = +prompt("Nhap so lon nhat:");
+        let matrix = generatorMatrix(size, min, max);
+        generateTable(matrix);
+
+      }
+      main();
+    </script>
+  </body>
+</html>
