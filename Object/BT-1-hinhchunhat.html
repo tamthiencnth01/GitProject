@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1368px"
+      height="768px"
+      style="border: 1px solid rgb(209, 113, 113)"
+    ></canvas>
+    <script>
+      let Rectangle = function (x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.getWidth = function () {
+          return width;
+        };
+        this.getHeight = function () {
+          return height;
+        };
+        this.getArea = function () {
+          return width * height;
+        };
+        this.getPerimeter = function () {
+          return (width + height) * 2;
+        };
+      };
+      function createRectangle() {
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        var rectangle = new Rectangle(450, 500, 180, 80);
+        ctx.beginPath();
+        ctx.fillRect(
+          rectangle.x,
+          rectangle.y,
+          rectangle.width,
+          rectangle.height
+        );
+        ctx.fill();
+      }
+      createRectangle();
+      // let rectangle = new Rectangle(2, 100);
+      // let width = rectangle.getWidth();
+      // let height = rectangle.getHeight();
+      // let area = rectangle.getArea();
+      // let perimeter = rectangle.getPerimeter();
+      // alert(
+      //   `Chieu dai la ${width}, chieu rong la  ${height}, dien tich la  ${area}, chu vi la ${perimeter}`
+      // );
+    </script>
+  </body>
+</html>

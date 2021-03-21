@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      var canvas = document.getElementById("canvas");
+      canvas.width = 1360;
+      canvas.height = 768;
+      const context = canvas.getContext("2d");
+      function Draw(A, B) {
+        context.beginPath();
+        context.moveTo(x1, y1);
+        context.lineTo(x2, y2);
+        context.stroke();
+        context.closePath();
+      }
+
+      let drawing = false;
+      let startPoint = [0, 0];
+      canvas.addEventListener("mousedown", handleMouseDown);
+      canvas.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+      function handleMouseDown(event) {
+        drawing = true;
+        const { pageX: x, pageY: y } = event;
+      }
+      function getPointOfCanvas(event) {
+        const { x, y } = canvas.getBoundingClientRect();
+        const { pageX, pageY } = event;
+        return [pageX - x, pageY - y];
+      }
+
+      function handleMouseDown(event) {
+        drawing = true;
+        startPoint = getPointOfCanvas(event);
+      }
+      function handleMouseUp() {
+        drawing = false;
+        startPoint = [0, 0];
+      }
+      function handleMouseMove(event) {
+        // không làm gì nếu chưa trong tiến trình vẽ
+        if (!drawing) return;
+        const nextPoint = getPointOfCanvas(event);
+        context.beginPath();
+        context.moveTo(...startPoint);
+        context.lineTo(...nextPoint);
+        context.stroke();
+        context.closePath();
+        // B sẽ trở thành điểm bắt đầu
+        startPoint = [...nextPoint];
+      }
+    </script>
+  </body>
+</html>

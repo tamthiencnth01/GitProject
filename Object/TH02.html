@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let Circle = function (radius) {
+        this.radius = radius;
+        this.gerRadius = function () {
+          return radius;
+        };
+        this.getArea = function () {
+          return Math.PI * radius * radius;
+        };
+      };
+      let circle = new Circle(2);
+      let radius = circle.gerRadius();
+      let area = circle.getArea();
+      alert(`Radius: ${radius} Area: ${area}`);
+      let circle2 = new Circle(4);
+      let radius2 = circle2.gerRadius();
+      let area2 = circle2.getArea();
+      alert(`Radius: ${radius2} Area: ${area2}`);
+    </script>
+  </body>
+</html>

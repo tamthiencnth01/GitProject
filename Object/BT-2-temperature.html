@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let Temperature = function (degree) {
+        this.degree = degree;
+
+        this.getDegree = function () {
+          return degree;
+        };
+        if (degree > -273) {
+          this.getToFerah = function () {
+            return this.degree * 1.8 + 32;
+          };
+          this.getToKenvin = function () {
+            return this.degree + 273.15;
+          };
+        } else {
+          return alert("Nhiet do phai lon hon -273");
+        }
+      };
+      let input = +prompt("Nhap nhiet do:");
+      let temp = new Temperature(input);
+      let degree = temp.getDegree();
+      let toF = temp.getToFerah();
+      let toK = temp.getToKenvin();
+      alert(
+        `Nhiet do la: ${degree} chuyen sang Ferah la ${toF} chuyen sang Kenvin ${toK}`
+      );
+    </script>
+  </body>
+</html>
